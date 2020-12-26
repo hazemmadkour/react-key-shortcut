@@ -1,31 +1,30 @@
-import React, {useEffect,useContext} from 'react';
+import {useEffect,useContext} from 'react';
+import ShortcutContext from '../ShortcutContext';
 import Mousetrap from 'mousetrap';
-import ShortcutContext from 'ShortcutContext';
 
 import {GUID} from '../../utils/utilities';
 
-//const Mousetrap = require("mousetrap");
-//Mousetrap.bind("ctrl+d", yourEventHandler);
 
-const [context, setContext] = useContext(ShortcutContext);
-
-export const useRegisterShortcut = ({shortcut,isPublic},callback) =>{
+export const useRegisterShortcut = ({shortcut,name,isPublic},callback) =>{
+    const [context, setContext] = useContext(ShortcutContext);
     if(shortcut){
-        if(isPublic)
-            setContext({...context, [shortcut]:''});
+        if(isPublic && name && !context[name] && context[name]!==''){
+            setContext({...context, [name]:''});
 
-        Mousetrap.bind(shortcut, ()=>{
+            Mousetrap.bind(shortcut, ()=>{
 
-            if(isPublic)
-                setContext({...context, [shortcut]:GUID()});
-            if(callback)
-                callback();
+                if(isPublic)
+                    setContext({...context, [name]:GUID()});
+                if(callback)
+                    callback();
 
-        });
+            });
+        }
     }
 }
 
 export const useTrigerShortcut = (shortcut) =>{
+    const [context, setContext] = useContext(ShortcutContext);
     if(shortcut){
         if(context[shortcut]){
             setContext({...context, [shortcut]:GUID()});
@@ -35,11 +34,12 @@ export const useTrigerShortcut = (shortcut) =>{
     }
 }
 
-export const useShortcutCallback = (shortcut,callback) =>{
+export const useShortcutCallback = (name,callback) =>{
+    const [context] = useContext(ShortcutContext);
     useEffect(()=>{
         
-        if(context[shortcut] && callback)
+        if(context[name] && callback)
             callback();
             
-    },[context[shortcut]]);
+    },[context[name]]);
 }
