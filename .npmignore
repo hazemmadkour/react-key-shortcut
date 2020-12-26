@@ -3,3 +3,5 @@ __tests__
 spec.js
 test.js
 __snapshots__
+
+/examples
