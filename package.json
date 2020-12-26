@@ -1,8 +1,22 @@
 {
-  "name": "@hazemmadkour/hazem-lib",
+  "name": "react-key-shortcut",
   "version": "0.1.0",
   "private": false,
   "main": "lib/index.js",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazemmadkour/react-key-shortcut.git"
+  },
+  "keywords": [
+    "key-shortcut"
+  ],
+  "author": "Hazem Madkour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazemmadkour/react-key-shortcut/issues"
+  },
+  "homepage": "https://github.com/hazemmadkour/react-key-shortcut#readme",
   "babel": {
     "presets": [
       "@babel/preset-react"
@@ -23,7 +37,9 @@
     "mousetrap": "^1.6.5",
     "web-vitals": "^0.2.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^17.0.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && mkdir dist &&  babel ./src/lib -d dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
@@ -48,19 +64,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hazemmadkour/react-key-shortcut.git"
-  },
-  "keywords": [
-    "key-shortcut"
-  ],
-  "author": "Hazem Madkour",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hazemmadkour/react-key-shortcut/issues"
-  },
-  "homepage": "https://github.com/hazemmadkour/react-key-shortcut#readme"
+  }
 }
