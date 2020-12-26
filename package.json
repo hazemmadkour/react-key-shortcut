@@ -44,8 +44,7 @@
     "start": "react-scripts start",
     "build": "rm -rf dist && mkdir dist &&  babel ./src/lib -d dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "set CI=true && react-scripts test --passWithNoTests --env=jsdom -u",
-    "eject": "react-scripts eject",
-    "publish": "np"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

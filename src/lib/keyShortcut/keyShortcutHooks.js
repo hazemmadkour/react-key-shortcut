@@ -9,14 +9,15 @@ import {GUID} from '../../utils/utilities';
 
 const [context, setContext] = useContext(ShortcutContext);
 
-export const useRegisterShortcut = ({shortcut,name},callback) =>{
+export const useRegisterShortcut = ({shortcut,isPublic},callback) =>{
     if(shortcut){
-        const key = name?name:shortcut;
-        setContext({...context, key:''});
+        if(isPublic)
+            setContext({...context, [shortcut]:''});
 
         Mousetrap.bind(shortcut, ()=>{
 
-            setContext({...context, key:GUID()});
+            if(isPublic)
+                setContext({...context, [shortcut]:GUID()});
             if(callback)
                 callback();
 
@@ -24,11 +25,21 @@ export const useRegisterShortcut = ({shortcut,name},callback) =>{
     }
 }
 
-export const useShortcutCallback = (nameOrShortcut,callback) =>{
+export const useTrigerShortcut = (shortcut) =>{
+    if(shortcut){
+        if(context[shortcut]){
+            setContext({...context, [shortcut]:GUID()});
+        }
+
+        Mousetrap.trigger(shortcut);
+    }
+}
+
+export const useShortcutCallback = (shortcut,callback) =>{
     useEffect(()=>{
         
-        if(context[nameOrShortcut] && callback)
+        if(context[shortcut] && callback)
             callback();
             
-    },[context[nameOrShortcut]]);
+    },[context[shortcut]]);
 }
