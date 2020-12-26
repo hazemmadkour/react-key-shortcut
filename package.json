@@ -1,0 +1,66 @@
+{
+  "name": "react-key-shortcut",
+  "version": "0.1.0",
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "peerDependencies": {
+    "react-scripts": "4.0.1",
+    "react": "^17.0.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "mousetrap": "^1.6.5",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rm -rf dist && mkdir dist &&  babel ./src/lib -d dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "publish": "np"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "np": "^7.0.0"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazemmadkour/react-key-shortcut.git"
+  },
+  "keywords": [
+    "key-shortcut"
+  ],
+  "author": "Hazem Madkour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazemmadkour/react-key-shortcut/issues"
+  },
+  "homepage": "https://github.com/hazemmadkour/react-key-shortcut#readme"
+}
