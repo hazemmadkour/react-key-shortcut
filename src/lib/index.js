@@ -1,4 +1,15 @@
-import KeyShortcutProvider from './keyShortcut/KeyShortcutProvider';
-import {useRegisterShortcut,useShortcutCallback} from './keyShortcut/keyShortcutHooks';
+import KeyShortcutProvider from "./keyShortcut/KeyShortcutProvider";
+import {
+  useRegisterShortcuts,
+  useShortcut,
+  useTriggerShortcut,
+  useShortcutCallback,
+} from "./keyShortcut/keyShortcutHooks";
 
-export {KeyShortcutProvider,useRegisterShortcut,useShortcutCallback};
+export {
+  KeyShortcutProvider,
+  useRegisterShortcuts,
+  useShortcut,
+  useTriggerShortcut,
+  useShortcutCallback,
+};
