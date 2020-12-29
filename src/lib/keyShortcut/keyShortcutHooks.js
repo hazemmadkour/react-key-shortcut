@@ -4,19 +4,25 @@ import ShortcutContext from '../ShortcutContext';
 
 import {GUID} from '../../utils/utilities';
 
-export const useRegisterShortcuts = ({shortcuts,name}) =>{
-    const [context, setContext] = useContext(ShortcutContext);
-    if(shortcuts&&name){
-        if(Array.isArray(shortcuts)){
-            shortcuts.forEach(item=>{
-                registerShortcut(context,setContext,item,name);
-            });
-        }
-        else
-            registerShortcut(context,setContext,shortcuts,name);
-            
-        Mousetrap.bind(shortcuts, ()=>{
-            setContext({...context, [name]:GUID()});
+export const useRegisterShortcuts = (shortcuts = []) =>{
+
+    if(shortcuts?.length){
+        const [context, setContext] = useContext(ShortcutContext);
+        shortcuts.forEach(item =>{
+            const {shortcut,name} = item;
+            if(shortcut&&name){
+                if(Array.isArray(shortcut)){
+                    shortcut.forEach(item=>{
+                        registerShortcut(context,setContext,item,name);
+                    });
+                }
+                else
+                    registerShortcut(context,setContext,shortcut,name);
+                    
+                Mousetrap.bind(shortcut, ()=>{
+                    setContext({...context, [name]:GUID()});
+                });
+            }
         });
     }
 }

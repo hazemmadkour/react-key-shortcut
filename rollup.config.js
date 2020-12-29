@@ -39,6 +39,7 @@ const config = outputs.map(({file, format}) => ({
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',
+      mousetrap:'Mousetrap'
     },
     exports: 'named',
   },
