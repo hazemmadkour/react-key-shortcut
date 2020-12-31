@@ -4,7 +4,7 @@ This library is build over [**mousetrap**](https://www.npmjs.com/package/mousetr
 
 ## Why to Use
 
-This library gives you the cabability to register all you shortcuts with names once accross the system, So  you can bind action on the name direct not the shortcut. also it gives you the cabability to bind action on the specific shortcut in one component
+This library gives you the capability to register all your shortcuts with names once across the system, So  you can bind action on the name direct not the shortcut. also it gives you the capability to bind action on the specific shortcut in one component.
 
 ## How to use
 
@@ -28,7 +28,8 @@ ReactDOM.render(
 ```
 * Register shortcuts in App component
 
-```javascriptimport React from 'react';
+```javascript
+import React from 'react';
 import {useRegisterShortcuts} from 'react-key-shortcuts';
 
 import Test1 from './Test1';
@@ -105,4 +106,4 @@ Hook | Description | Syntax | Params
 useRegisterShortcuts | used to register shortcut with name | useRegisterShortcuts(shortcuts)| shortcuts: array of object {shortcut,name}. shortcut accept the same input of shortcut in **mousetrap**
 useShortcutCallback | used to bind action to one of the shortcut name | useShortcutCallback(name,callback)| name is the register name for the shortcut
 useTriggerShortcut | used to trigger shortcut in order to simulate keyboard action programmatically | useTriggerShortcut(shortcutOrName) | shortcutOrName is wether an action name (zoom) or a real shortcut(ctrl+z)
-useShortcut | used to bind action to a specfic shortcut to deliver the default behavior of **mousetrap** | useShortcut(shortcut,callback)| shortcut accept the same input of shortcut in **mousetrap**
+useShortcut | used to bind action to a specfic shortcut to deliver the default behaviour of **mousetrap** | useShortcut(shortcut,callback)| shortcut accept the same input of shortcut in **mousetrap**
