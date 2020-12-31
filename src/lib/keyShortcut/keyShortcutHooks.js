@@ -6,14 +6,14 @@ import {GUID} from '../../utils/utilities';
 
 export const useRegisterShortcuts = (shortcuts = []) =>{
 
+    const [context, setContext] = useContext(ShortcutContext);
     if(shortcuts?.length){
-        const [context, setContext] = useContext(ShortcutContext);
         shortcuts.forEach(item =>{
             const {shortcut,name} = item;
             if(shortcut&&name){
                 if(Array.isArray(shortcut)){
-                    shortcut.forEach(item=>{
-                        registerShortcut(context,setContext,item,name);
+                    shortcut.forEach(shortcutItem=>{
+                        registerShortcut(context,setContext,shortcutItem,name);
                     });
                 }
                 else
@@ -53,14 +53,14 @@ export const useShortcut = (shortcut,callback) =>{
     }
 }
 
-export const useTriggerShortcut = (shortcut) =>{
+export const useTriggerShortcut = (shortcutOrName) =>{
     const [context, setContext] = useContext(ShortcutContext);
-    if(shortcut){
-        const shortcutName = context.CONTROL_MAP[shortcut];
+    if(shortcutOrName){
+        const shortcutName = context.CONTROL_MAP[shortcutOrName];
         if(shortcutName)
             setContext({...context, [shortcutName]:GUID()});
         else
-            Mousetrap.trigger(shortcut);
+            Mousetrap.trigger(shortcutOrName);
     }
 }
 

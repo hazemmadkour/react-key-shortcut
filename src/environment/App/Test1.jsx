@@ -1,8 +1,7 @@
 import React from 'react';
-import {useRegisterShortcuts, useShortcutCallback} from 'react-key-shortcuts';
+import {useShortcutCallback} from 'react-key-shortcuts';
 
 const Test1 = () => {
-  useRegisterShortcuts({shortcuts: ['ctrl+z', 'ctrl+d'], name: 'zoom'});
   useShortcutCallback('zoom', () => {
     alert('test1 is zooming');
   });

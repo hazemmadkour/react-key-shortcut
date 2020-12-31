@@ -1,6 +1,6 @@
 {
   "name": "react-key-shortcuts",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -53,7 +53,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-key-shortcuts": "^0.1.0",
+    "react-key-shortcuts": "^0.3.1",
     "react-scripts": "4.0.1",
     "react-test-renderer": "^16.14.0",
     "recursive-copy": "^2.0.11",

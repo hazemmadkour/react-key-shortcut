@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ShortcutContext from '../ShortcutContext';
+import ShortcutContext from 'lib/ShortcutContext';
 
 const KeyShortcutProvider = ({children}) =>{
     const [context,setContext] = useState({});
