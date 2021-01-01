@@ -1,9 +1,9 @@
-import KeyShortcutProvider from "./keyShortcut/KeyShortcutProvider";
 import {
   useRegisterShortcuts,
   useShortcut,
   useTriggerShortcut,
   useShortcutCallback,
+  KeyShortcutProvider
 } from "./keyShortcut/keyShortcutHooks";
 
 export {

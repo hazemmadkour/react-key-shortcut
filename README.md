@@ -8,7 +8,7 @@ This library gives you the capability to register all your shortcuts with names 
 
 ## How to use
 
-* wrap the app in 'index.js' with KeyShortcutprovider
+* wrap the app in 'index.js' with KeyShortcutprovider. (**you can pass all shortcuts direct in the KeyShortcutProvider if you want**)
 
 ```javascript
 import React from 'react';

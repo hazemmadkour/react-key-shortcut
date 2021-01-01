@@ -1,12 +1,27 @@
-import {useEffect,useContext} from 'react';
+import React,{useEffect,useContext,useState} from 'react';
 import Mousetrap from 'mousetrap';
-import ShortcutContext from '../ShortcutContext';
+import ShortcutContext from './ShortcutContext';
 
 import {GUID} from '../../utils/utilities';
+
+export const KeyShortcutProvider = ({shortcuts,children}) =>{
+    const [context,setContext] = useState({});
+
+    useEffect(()=>{
+        processShortcuts(context, setContext,shortcuts);
+    },[]);
+
+    return <ShortcutContext.Provider value={[context,setContext]}>{children}</ShortcutContext.Provider>;
+};
 
 export const useRegisterShortcuts = (shortcuts = []) =>{
 
     const [context, setContext] = useContext(ShortcutContext);
+    processShortcuts(context, setContext,shortcuts);
+    
+}
+
+const processShortcuts = (context, setContext,shortcuts) =>{
     if(shortcuts?.length){
         shortcuts.forEach(item =>{
             const {shortcut,name} = item;
@@ -25,7 +40,7 @@ export const useRegisterShortcuts = (shortcuts = []) =>{
             }
         });
     }
-}
+};
 
 const registerShortcut = (context,setContext,shortcut,name) =>{
     const newContext = {...context};
