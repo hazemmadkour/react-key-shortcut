@@ -1,4 +1,4 @@
-# react-key-shortcut
+# react-key-shortcuts
 
 This library is build over [**mousetrap**](https://www.npmjs.com/package/mousetrap). it gives you the ability to register all your shortcuts with action names in order to listen to this action name in any component.
 
