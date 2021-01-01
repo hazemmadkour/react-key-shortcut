@@ -1,6 +1,6 @@
 {
   "name": "react-key-shortcuts",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "private": false,
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -20,9 +20,12 @@
   "bugs": {
     "url": "https://github.com/hazemmadkour/react-key-shortcut/issues"
   },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-key-shortcuts": "^0.3.1",
+    "react-scripts": "4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
@@ -58,8 +61,6 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
     "prop-types": "^15.7.2",
-    "react-key-shortcuts": "^0.3.1",
-    "react-scripts": "4.0.1",
     "react-test-renderer": "^16.14.0",
     "recursive-copy": "^2.0.11",
     "rimraf": "^3.0.2",

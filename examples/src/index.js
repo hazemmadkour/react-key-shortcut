@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {KeyShortcutProvider} from 'react-key-shortcuts';
-import App from './environment/App';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
