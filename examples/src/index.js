@@ -5,10 +5,10 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <KeyShortcutProvider shortcuts={[
-    {shortcut: ['ctrl+z', 'ctrl+d'], name: 'zoom'},
-    {shortcut: 'ctrl+d', name: 'open'},
-  ]}>
+    <KeyShortcutProvider shortcuts={{
+    zoom: ['ctrl+z', 'ctrl+d'],
+    open: 'ctrl+d',
+  }}>
       <App />
     </KeyShortcutProvider>
   </React.StrictMode>,

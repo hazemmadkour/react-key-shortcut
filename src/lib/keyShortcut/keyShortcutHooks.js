@@ -14,7 +14,7 @@ export const KeyShortcutProvider = ({shortcuts,children}) =>{
     return <ShortcutContext.Provider value={[context,setContext]}>{children}</ShortcutContext.Provider>;
 };
 
-export const useRegisterShortcuts = (shortcuts = []) =>{
+export const useRegisterShortcuts = (shortcuts = {}) =>{
 
     const [context, setContext] = useContext(ShortcutContext);
     processShortcuts(context, setContext,shortcuts);
@@ -22,10 +22,11 @@ export const useRegisterShortcuts = (shortcuts = []) =>{
 }
 
 const processShortcuts = (context, setContext,shortcuts) =>{
-    if(shortcuts?.length){
-        shortcuts.forEach(item =>{
-            const {shortcut,name} = item;
-            if(shortcut&&name){
+    for(let name in shortcuts){
+        if(!name) continue;
+
+        const shortcut = shortcuts[name];
+            if(shortcut){
                 if(Array.isArray(shortcut)){
                     shortcut.forEach(shortcutItem=>{
                         registerShortcut(context,setContext,shortcutItem,name);
@@ -38,7 +39,6 @@ const processShortcuts = (context, setContext,shortcuts) =>{
                     setContext({...context, [name]:GUID()});
                 });
             }
-        });
     }
 };
 

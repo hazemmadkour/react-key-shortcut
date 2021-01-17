@@ -36,10 +36,10 @@ import Test1 from './Test1';
 import Test2 from './Test2';
 
 const App = () => {
-  useRegisterShortcuts([
-    {shortcut: ['ctrl+z', 'ctrl+d'], name: 'zoom'},
-    {shortcut: 'ctrl+d', name: 'open'},
-  ]);
+  useRegisterShortcuts({
+    zoom: ['ctrl+z', 'ctrl+d'],
+    open: 'ctrl+d',
+  });
   return (
     <div>
       <Test1 />
@@ -103,7 +103,7 @@ export default Test2;
 
 Hook | Description | Syntax | Params
 ----|----|----|----
-useRegisterShortcuts | used to register shortcut with name | useRegisterShortcuts(shortcuts)| shortcuts: array of object {shortcut,name}. shortcut accept the same input of shortcut in **mousetrap**
+useRegisterShortcuts | used to register shortcut with name | useRegisterShortcuts(shortcuts)| shortcuts: object {shortcut,name}. shortcut accept the same input of shortcut in **mousetrap**
 useShortcutCallback | used to bind action to one of the shortcut name | useShortcutCallback(name,callback)| name is the register name for the shortcut
 useTriggerShortcut | used to trigger shortcut in order to simulate keyboard action programmatically | useTriggerShortcut(shortcutOrName) | shortcutOrName is wether an action name (zoom) or a real shortcut(ctrl+z)
 useShortcut | used to bind action to a specfic shortcut to deliver the default behaviour of **mousetrap** | useShortcut(shortcut,callback)| shortcut accept the same input of shortcut in **mousetrap**
